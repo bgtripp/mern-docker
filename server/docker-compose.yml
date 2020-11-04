@@ -9,7 +9,7 @@ services:
       container_name: myapp-node-express
       volumes:
        - .:/usr/src/app
-       - /usr/src/app/node_modules
+       - /usr/app/node_modules
       ports:
         - "8080:8080"
       depends_on:

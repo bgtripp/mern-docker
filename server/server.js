@@ -2,8 +2,11 @@
 const express = require('express');
 const app = express();
 const PORT = 8080;
+const cors = require('cors')
 // Our DB Configuration
 require('./src/database');
+
+app.use(cors());
 
 app.get('/', (req, res) => {
     res.send("Hello World ! ");
@@ -16,7 +19,7 @@ app.listen(PORT, function () {
 const bodyParser = require('body-parser');
 
 // Routes
-const postRouter = require('./src/routes/post.router');
+const todoRoutes = require('./src/routes/todo.router');
 
 app.use(
   bodyParser.urlencoded({
@@ -25,4 +28,4 @@ app.use(
 );
 app.use(bodyParser.json());
 
-app.use('/posts', postRouter);
+app.use('/todos', todoRoutes);
