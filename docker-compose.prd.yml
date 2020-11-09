@@ -1,4 +1,4 @@
-version: '3.7'
+version: '3'
 services:
   web:
     build:
@@ -6,13 +6,19 @@ services:
       dockerfile: Dockerfile
     ports:
       - "8080:8080"
-    # env_file: ./server/.env # TODO - uncomment this to auto-load your .env file!
+    env_file: ./server/.env # TODO - uncomment this to auto-load your .env file!
     environment:
       NODE_ENV: production
     depends_on:
       - mongo
     networks:
       - app-network
+    logging:
+      driver: awslogs
+      options: 
+        awslogs-group: tutorial
+        awslogs-region: eu-east-1
+        awslogs-stream-prefix: web
   mongo:
     image: mongo
     volumes:

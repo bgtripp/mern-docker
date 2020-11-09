@@ -1,0 +1,9 @@
+version: 1
+task_definition:
+    services:
+        web:
+            essential: true
+            mem_limit: 2000000000
+        mongo:
+            essential: true
+            mem_limit: 2000000000

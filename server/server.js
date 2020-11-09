@@ -7,13 +7,6 @@ const path = require('path');
 
 const CLIENT_BUILD_PATH = path.join(__dirname, "../client/build");
 
-// Static files
-app.use(express.static(CLIENT_BUILD_PATH));
-
-// Server React Client
-app.get("/", function(req, res) {
-  res.sendFile(path.join(CLIENT_BUILD_PATH , "index.html"));
-});
 // Our DB Configuration
 require('./src/database');
 
@@ -37,3 +30,11 @@ app.use(
 app.use(bodyParser.json());
 
 app.use('/todos', todoRoutes);
+
+// Static files
+app.use(express.static(CLIENT_BUILD_PATH));
+
+// Server React Client
+app.get("/", function(req, res) {
+  res.sendFile(path.join(CLIENT_BUILD_PATH , "index.html"));
+});
