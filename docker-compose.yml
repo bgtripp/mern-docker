@@ -15,9 +15,9 @@ services:
     networks:
       - app-network
     environment:
-        - MONGO_HOSTNAME=mongo
-        - MONGO_PORT=27017
-        - MONGO_DB=myapp_db
+      - MONGO_HOSTNAME=mongo
+      - MONGO_PORT=27017
+      - MONGO_DB=myapp_db
   mongo:
     image: mongo
     ports:
