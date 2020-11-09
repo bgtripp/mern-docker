@@ -1,15 +1,8 @@
 version: '3.7'
 
 services:
-    webapp-server:
-      build:
-        context: .
-        dockerfile: Dockerfile
-      image: myapp-server-img
-      container_name: myapp-node-express
-      volumes:
-       - .:/usr/src/app
-       - /usr/app/node_modules
+    mern-server:
+      image: mern-server
       ports:
         - "8080:8080"
       depends_on:
@@ -21,6 +14,5 @@ services:
         - MONGO_DB=$MONGO_DB
     mongo:
       image: mongo
-      container_name: myapp-mongodb
       ports:
         - "27017:27017"
