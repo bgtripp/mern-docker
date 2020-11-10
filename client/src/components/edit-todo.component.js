@@ -88,7 +88,7 @@ export default class EditTodo extends Component {
                                 />
                     </div>
                     <div className="form-group">
-                        <label>Responsible: </label>
+                        <label>User: </label>
                         <input 
                                 type="text" 
                                 className="form-control"

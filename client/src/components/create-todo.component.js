@@ -42,7 +42,7 @@ export default class CreateTodo extends Component {
         
         console.log(`Form submitted:`);
         console.log(`Todo Description: ${this.state.todo_description}`);
-        console.log(`Todo Responsible: ${this.state.todo_responsible}`);
+        console.log(`User: ${this.state.todo_responsible}`);
         console.log(`Todo Priority: ${this.state.todo_priority}`);
      
         const newTodo = {
@@ -77,7 +77,7 @@ export default class CreateTodo extends Component {
                                 />
                     </div>
                     <div className="form-group">
-                        <label>Responsible: </label>
+                        <label>User: </label>
                         <input 
                                 type="text" 
                                 className="form-control"
