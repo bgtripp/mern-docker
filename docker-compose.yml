@@ -6,6 +6,11 @@ services:
       - "80:80"
     depends_on:
       - server
+    networks:
+      - app-network
+    links:
+      - "server:server"
+    restart: always
   server:
     image: mern-server
     ports:
@@ -19,7 +24,8 @@ services:
       - MONGO_PORT=27017
       - MONGO_DB=myapp_db
     links:
-      - mongo:mongo
+      - "mongo:mongo"
+    restart: always
   mongo:
     image: mongo
     ports:
@@ -28,6 +34,7 @@ services:
       - my-data:/data/db
     networks:
       - app-network
+    restart: always
 
 volumes:
   my-data: 
