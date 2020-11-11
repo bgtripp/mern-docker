@@ -21,7 +21,7 @@ const {
 } = process.env;
 
 const dbConnectionURL = {
-    'LOCALURL': `mongodb://${MONGO_HOSTNAME}:${MONGO_PORT}/${MONGO_DB}`
+    'LOCALURL': `mongodb://localhost:${MONGO_PORT}/${MONGO_DB}`
 };
 mongoose.connect(dbConnectionURL.LOCALURL, options);
 const db = mongoose.connection;
