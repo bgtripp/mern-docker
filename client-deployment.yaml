@@ -1,0 +1,18 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: mern-client
+spec:
+  replicas: 3
+  selector:
+    matchLabels:
+      app: mern-client
+  template:
+    metadata:
+      labels:
+        app: mern-client
+    spec:
+      containers:
+      - image: bgtripp/mern-client
+        name: container1
+        imagePullPolicy: Always
